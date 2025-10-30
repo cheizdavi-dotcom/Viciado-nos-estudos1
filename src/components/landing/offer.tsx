@@ -40,7 +40,7 @@ export function Offer() {
               Garanta Seu Acesso Completo
             </CardTitle>
             <CardDescription className="text-lg text-muted-foreground pt-2">
-                Por apenas R$9,99 (pagamento único, acesso vitalício), você recebe um pacote completo para dominar o foco e eliminar a procrastinação.
+                Receba um pacote completo para dominar o foco e eliminar a procrastinação.
             </CardDescription>
           </CardHeader>
           <CardContent className="mt-6 flex flex-col items-center p-6 sm:p-8">
@@ -57,15 +57,21 @@ export function Offer() {
                   </ul>
               </div>
               <div className="rounded-lg border-2 border-primary/50 bg-background/50 p-6 flex flex-col items-center justify-center">
-                 <p className="text-lg text-muted-foreground">Oferta válida até hoje às:</p>
-                <p className="my-2">
-                    <span className="font-headline text-7xl font-black text-primary">23:59</span>
-                </p>
+                 <p className="text-lg text-muted-foreground">Oferta válida até hoje às 23:59</p>
+                
+                 <div className="my-4 text-center">
+                    <p className="text-lg text-muted-foreground">
+                        De <s className="text-destructive/80">R$39,90</s> por apenas:
+                    </p>
+                    <p className="font-headline text-6xl font-black text-primary">R$9,99</p>
+                    <p className="text-sm text-muted-foreground">(Pagamento único)</p>
+                 </div>
+
                 <div className="flex flex-col items-center gap-2">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CountdownTimer />
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
                         <ShieldCheck className="h-5 w-5 text-primary" /> Garantia total de 7 dias.
                     </div>
-                    <CountdownTimer />
                 </div>
               </div>
             </div>

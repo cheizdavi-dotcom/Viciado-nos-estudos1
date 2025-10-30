@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Clock } from 'lucide-react';
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -36,17 +35,17 @@ export function CountdownTimer() {
   return (
     <div className="flex items-center justify-center space-x-2 text-center">
         <div className="flex flex-col items-center">
-            <span className="font-headline text-3xl font-bold text-accent">{formatTime(timeLeft.hours)}</span>
+            <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.hours)}</span>
             <span className="text-xs text-muted-foreground">HORAS</span>
         </div>
-        <span className="font-headline text-3xl font-bold text-accent">:</span>
+        <span className="font-headline text-3xl font-bold text-primary">:</span>
         <div className="flex flex-col items-center">
-            <span className="font-headline text-3xl font-bold text-accent">{formatTime(timeLeft.minutes)}</span>
+            <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.minutes)}</span>
             <span className="text-xs text-muted-foreground">MINUTOS</span>
         </div>
-        <span className="font-headline text-3xl font-bold text-accent">:</span>
+        <span className="font-headline text-3xl font-bold text-primary">:</span>
         <div className="flex flex-col items-center">
-            <span className="font-headline text-3xl font-bold text-accent">{formatTime(timeLeft.seconds)}</span>
+            <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.seconds)}</span>
             <span className="text-xs text-muted-foreground">SEGUNDOS</span>
         </div>
     </div>

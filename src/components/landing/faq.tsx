@@ -6,22 +6,30 @@ import {
 } from "@/components/ui/accordion";
 
 const faqItems = [
-  {
-    question: "Recebo o material na hora?",
-    answer: "Sim! Assim que o pagamento for confirmado, você receberá um e-mail com o acesso imediato a todo o material.",
-  },
-  {
-    question: "Funciona mesmo pra quem tem TDAH?",
-    answer: "Sim. O método inclui técnicas de foco e organização que são especialmente úteis para pessoas com TDAH, ajudando a criar uma estrutura e a gerenciar a atenção.",
-  },
-  {
-    question: "Posso acessar pelo celular?",
-    answer: "Com certeza! Todo o material é responsivo e pode ser acessado de qualquer dispositivo: celular, tablet ou computador.",
-  },
-  {
-    question: "O pagamento é seguro?",
-    answer: "Sim, 100% seguro. O pagamento é processado por uma das maiores plataformas de produtos digitais do mundo, utilizando criptografia de ponta para proteger seus dados.",
-  },
+    {
+        question: "Em quanto tempo verei resultados?",
+        answer: "Muitos alunos relatam uma mudança de mentalidade e melhora no foco já na primeira semana. Os resultados dependem da sua dedicação, mas o método foi desenhado para gerar ganhos rápidos e sustentáveis.",
+    },
+    {
+        question: "Funciona mesmo pra quem tem TDAH?",
+        answer: "Sim. O método inclui técnicas de foco e organização que são especialmente úteis para pessoas com TDAH, ajudando a criar uma estrutura, gerenciar a atenção e a usar o hiperfoco a seu favor.",
+    },
+    {
+        question: "Posso estudar mesmo tendo pouco tempo livre?",
+        answer: "Com certeza! O método foca em otimizar a qualidade do seu estudo, não apenas a quantidade. Você aprenderá a aproveitar ao máximo cada minuto disponível, tornando seu tempo mais produtivo.",
+    },
+    {
+        question: "Recebo o material na hora?",
+        answer: "Sim! Assim que o pagamento for confirmado, você receberá um e-mail com o acesso imediato e vitalício a todo o material.",
+    },
+    {
+        question: "Posso pagar com Pix, cartão ou boleto?",
+        answer: "Sim, a plataforma de pagamento aceita as principais formas de pagamento, incluindo Pix, cartão de crédito (parcelado) e boleto bancário.",
+    },
+    {
+        question: "Posso acessar pelo celular?",
+        answer: "Sim! Todo o material é responsivo e pode ser acessado de qualquer dispositivo: celular, tablet ou computador, a qualquer hora e em qualquer lugar.",
+    },
 ];
 
 export function Faq() {
@@ -33,13 +41,13 @@ export function Faq() {
             Perguntas Frequentes
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Ainda tem dúvidas? A gente te ajuda.
+            Ainda tem dúvidas? A gente te ajuda a decidir.
           </p>
         </div>
         <Accordion type="single" collapsible className="mt-12 w-full">
           {faqItems.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+            <AccordionItem key={index} value={`item-${index}`} className="border-border/50">
+              <AccordionTrigger className="text-left text-lg font-semibold transition-all hover:text-primary hover:no-underline">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground">

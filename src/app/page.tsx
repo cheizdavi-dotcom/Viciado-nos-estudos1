@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/landing/testimonials";
 import { Guarantee } from "@/components/landing/guarantee";
 import { Faq } from "@/components/landing/faq";
 import { Footer } from "@/components/landing/footer";
+import { BeforeAfter } from "@/components/landing/before-after";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Header />
         <PainPoints />
+        <BeforeAfter />
         <Solutions />
         <Offer />
         <Testimonials />

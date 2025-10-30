@@ -1,27 +1,48 @@
+'use client';
 import { AlertTriangle } from "lucide-react";
+import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 const painPoints = [
-  "Você tenta estudar, mas sempre acaba se distraindo?",
-  "Sente que o cansaço e a falta de foco dominam seus dias?",
-  "Já tentou várias técnicas, mas nenhuma funcionou de verdade?",
-  "Sente culpa por não conseguir manter uma rotina?",
+  "Você tenta estudar, mas <span class='text-accent font-bold'>sempre acaba se distraindo</span> com o celular ou pensamentos aleatórios?",
+  "Sente que o <span class='text-accent font-bold'>cansaço e a falta de foco</span> dominam seus dias, mesmo querendo muito aprender?",
+  "Já tentou várias técnicas, mas <span class='text-accent font-bold'>nenhuma funcionou de verdade</span> para criar uma rotina sólida?",
+  "Sente <span class='text-accent font-bold'>culpa e ansiedade</span> por não conseguir manter a disciplina e ver os resultados que deseja?",
 ];
 
 export function PainPoints() {
   return (
     <section className="bg-card py-20 sm:py-24">
       <div className="container mx-auto max-w-4xl px-4">
-        <ul className="space-y-6">
+        <ul className="space-y-8">
           {painPoints.map((point, index) => (
-            <li key={index} className="flex items-start gap-4">
-              <AlertTriangle className="mt-1 h-6 w-6 flex-shrink-0 text-accent" />
-              <p className="text-lg text-foreground md:text-xl">{point}</p>
-            </li>
+             <motion.li 
+                key={index} 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4 p-4 rounded-lg hover:bg-background/30 transition-colors">
+              <AlertTriangle className="mt-1 h-8 w-8 flex-shrink-0 text-accent" />
+              <p className="text-lg text-foreground md:text-xl" dangerouslySetInnerHTML={{ __html: point }}></p>
+            </motion.li>
           ))}
         </ul>
-        <p className="mt-10 text-center font-headline text-xl font-semibold text-foreground md:text-2xl">
-          Se você respondeu <span className="text-accent">SIM</span> para uma ou mais dessas perguntas, este material foi feito pra você.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <p className="mt-12 text-center font-headline text-xl font-semibold text-foreground md:text-2xl">
+            Se você se identificou, este método é <span className="text-primary">exatamente o que você precisa</span>.
+          </p>
+          <div className="mt-8 flex justify-center">
+             <Button variant="outline" size="lg">
+                Sim, Preciso Mudar Isso Agora
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

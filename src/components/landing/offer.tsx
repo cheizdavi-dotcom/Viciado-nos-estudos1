@@ -1,14 +1,30 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Music4, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CountdownTimer } from './countdown-timer';
 
-const bonuses = [
-  "O Poder do Estudo Efetivo",
-  "100 Técnicas para Resolver Questões de Concurso",
-  "Como Manter Uma Rotina de Estudos",
-  "Playlist de Foco Profundo (Lo-fi)",
-];
+const included = [
+    {
+        icon: CheckCircle2,
+        text: "Ebook principal",
+    },
+    {
+        icon: CheckCircle2,
+        text: "Vídeos e técnicas práticas",
+    },
+    {
+        icon: Music4,
+        text: "Playlist de Foco Profundo",
+    },
+    {
+        icon: Zap,
+        text: "Acesso vitalício",
+    },
+    {
+        icon: Zap,
+        text: "Atualizações futuras",
+    },
+]
 
 export function Offer() {
   return (
@@ -23,35 +39,34 @@ export function Offer() {
             <CardTitle className="font-headline text-4xl font-black sm:text-5xl">
               Garanta Seu Acesso Completo
             </CardTitle>
+            <CardDescription className="text-lg text-muted-foreground pt-2">
+                Por apenas R$9,99 (pagamento único, acesso vitalício), você recebe um pacote completo para dominar o foco e eliminar a procrastinação.
+            </CardDescription>
           </CardHeader>
           <CardContent className="mt-6 flex flex-col items-center p-6 sm:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-              <div className="flex flex-col justify-center">
-                 <h4 className="font-headline text-2xl font-bold text-center">O que você recebe:</h4>
+              <div className="flex flex-col justify-center items-center md:items-start">
+                 <h4 className="font-headline text-2xl font-bold text-center md:text-left">O que você recebe:</h4>
                   <ul className="mt-4 space-y-3 text-lg">
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary" />
-                      <span>Ebook: Como Ficar Viciado em Estudar</span>
-                    </li>
-                    {bonuses.map((bonus) => (
-                        <li key={bonus} className="flex items-center gap-3">
-                        <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary" />
-                        <span className="text-muted-foreground">{bonus}</span>
+                    {included.map((item, index) => (
+                        <li key={index} className="flex items-center gap-3">
+                        <item.icon className="h-6 w-6 flex-shrink-0 text-primary" />
+                        <span>{item.text}</span>
                         </li>
                     ))}
-                    <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary" />
-                      <span className="font-bold">Acesso Vitalício e Atualizações</span>
-                    </li>
                   </ul>
               </div>
               <div className="rounded-lg border-2 border-primary/50 bg-background/50 p-6 flex flex-col items-center justify-center">
-                 <p className="text-lg text-muted-foreground">De <s className="text-destructive/80">R$39,90</s> por apenas:</p>
+                 <p className="text-lg text-muted-foreground">Oferta válida até hoje às:</p>
                 <p className="my-2">
-                    <span className="font-headline text-7xl font-black text-primary">R$9,99</span>
+                    <span className="font-headline text-7xl font-black text-primary">23:59</span>
                 </p>
-                <p className="text-sm text-muted-foreground mb-4">(Pagamento único, acesso vitalício)</p>
-                <CountdownTimer />
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <ShieldCheck className="h-5 w-5 text-primary" /> Garantia total de 7 dias.
+                    </div>
+                    <CountdownTimer />
+                </div>
               </div>
             </div>
             

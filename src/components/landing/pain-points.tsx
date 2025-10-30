@@ -4,10 +4,10 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
 const painPoints = [
-  "Você tenta estudar, mas <span class='text-accent font-bold'>sempre acaba se distraindo</span> com o celular ou pensamentos aleatórios?",
-  "Sente que o <span class='text-accent font-bold'>cansaço e a falta de foco</span> dominam seus dias, mesmo querendo muito aprender?",
-  "Já tentou várias técnicas, mas <span class='text-accent font-bold'>nenhuma funcionou de verdade</span> para criar uma rotina sólida?",
-  "Sente <span class='text-accent font-bold'>culpa e ansiedade</span> por não conseguir manter a disciplina e ver os resultados que deseja?",
+  "Você tenta estudar, mas o celular e os pensamentos <span class='text-accent font-bold'>não param de te distrair?</span>",
+  "Sente que o <span class='text-accent font-bold'>foco desaparece</span> em poucos minutos, mesmo querendo aprender?",
+  "Já tentou várias técnicas, mas <span class='text-accent font-bold'>nada parece durar</span> mais que uma semana?",
+  "A <span class='text-accent font-bold'>culpa e a ansiedade</span> aparecem de novo, e o ciclo recomeça?",
 ];
 
 export function PainPoints() {
@@ -38,7 +38,7 @@ export function PainPoints() {
             Se você se identificou, este método é <span className="text-primary">exatamente o que você precisa</span>.
           </p>
           <div className="mt-8 flex justify-center">
-             <Button variant="outline" size="lg">
+             <Button variant="outline" size="lg" className="h-14 text-base">
                 Sim, Preciso Mudar Isso Agora
             </Button>
           </div>

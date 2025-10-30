@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle2 } from "lucide-react";
+import { Book, Video, BrainCircuit, Star, Mail, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -8,32 +8,32 @@ const solutions = [
   {
     title: "+1200 Técnicas e Estratégias",
     description: "Um arsenal completo contra a procrastinação para você nunca mais ficar sem saber o que fazer.",
-    icon: CheckCircle2,
+    icon: Book,
   },
   {
-    title: "Dicas Práticas e Neurocientíficas",
+    title: "Dicas Neurocientíficas",
     description: "Métodos baseados em ciência para otimizar seu cérebro e criar hábitos de estudo poderosos.",
-     icon: CheckCircle2,
+     icon: BrainCircuit,
   },
   {
     title: "Aulas e Vídeos Educativos",
     description: "Conteúdo dinâmico e direto ao ponto para acelerar seu aprendizado e motivação.",
-     icon: CheckCircle2,
+     icon: Video,
   },
   {
     title: "Ebooks e Palestras Bônus",
     description: "Materiais extras sobre foco, disciplina e resolução de questões para complementar sua jornada.",
-     icon: CheckCircle2,
+     icon: Star,
   },
   {
     title: "Suporte Direto por E-mail",
     description: "Tire suas dúvidas e receba orientação personalizada sempre que precisar.",
-     icon: CheckCircle2,
+     icon: Mail,
   },
    {
     title: "Comunidade Exclusiva",
     description: "Conecte-se com outros alunos, compartilhe experiências e mantenha a motivação em alta.",
-    icon: CheckCircle2,
+    icon: Users,
   },
 ];
 
@@ -46,10 +46,10 @@ export function Solutions() {
             O Método Cientificamente Comprovado Que Vai Fazer Você <span className="text-primary">Virar a Chave</span> da Procrastinação
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Baseado em neurociência e mais de 1.200 técnicas testadas, este método vai te ajudar a criar hábitos de estudo poderosos.
+            Baseado em princípios da neurociência e psicologia cognitiva, o método ensina como transformar procrastinação em foco através de hábitos simples e comprovados.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution, index) => (
             <motion.div 
                 key={solution.title}

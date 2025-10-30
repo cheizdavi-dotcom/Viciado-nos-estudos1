@@ -21,14 +21,14 @@ export function Header() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="font-headline text-4xl font-black tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-          Acabe com a Procrastinação e Descubra Como Estudar com <span className="text-primary">Foco e Prazer</span> Todos os Dias!
+          Pare de Procrastinar e Descubra Como Estudar com <span className="text-primary">Foco, Disciplina e Prazer</span> Todos os Dias.
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-          O método que já transformou <span className="font-bold text-accent">mais de 2.300 alunos</span> e vai te ensinar a dominar seu tempo, seu foco e sua motivação.
+          Método já aplicado em <span className="font-bold text-accent">mais de 2.300 alunos</span> e baseado em neurociência e técnicas comportamentais.
         </motion.p>
         <motion.div
             initial={{ opacity: 0, y: 20 }}

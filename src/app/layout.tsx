@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
-import { Poppins, Inter } from 'next/font/google';
+import { Poppins, PT_Sans } from 'next/font/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['700', '900'],
+  weight: ['400', '600', '700', '900'],
   variable: '--font-poppins',
 });
 
-const inter = Inter({
+const ptSans = PT_Sans({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-inter',
+  weight: ['400', '700'],
+  variable: '--font-pt-sans',
 });
 
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`dark ${poppins.variable} ${inter.variable}`}>
+    <html lang="pt-BR" className={`dark ${poppins.variable} ${ptSans.variable}`}>
       <body className="font-body bg-background text-foreground antialiased">
         {children}
         <Toaster />

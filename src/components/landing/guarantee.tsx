@@ -1,4 +1,6 @@
 import { ShieldCheck } from "lucide-react";
+import { PiCreditCard, PiPixLogo, PiBarcode } from "react-icons/pi";
+
 
 export function Guarantee() {
   return (
@@ -6,7 +8,7 @@ export function Guarantee() {
       <div className="container mx-auto max-w-4xl px-4">
         <div className="flex flex-col items-center gap-8 rounded-lg border-2 border-primary/50 bg-background/30 p-8 text-center shadow-2xl shadow-primary/10 md:flex-row md:gap-10 md:text-left">
           <div className="relative">
-            <ShieldCheck className="h-32 w-32 flex-shrink-0 text-primary" />
+            <ShieldCheck className="h-32 w-32 flex-shrink-0 text-primary animate-pulse" />
           </div>
           <div className="flex-1">
             <h2 className="font-headline text-3xl font-bold md:text-4xl">
@@ -15,10 +17,23 @@ export function Guarantee() {
             <p className="mt-4 text-lg text-muted-foreground">
               Você tem 7 dias para testar. Se não gostar, devolvemos 100% do seu dinheiro. Sem burocracia, sem enrolação. O risco é todo nosso.
             </p>
-            <div className="mt-6 flex justify-center gap-4 md:justify-start">
-                <p className="text-sm text-muted-foreground">Compra Segura</p>
-                <p className="text-sm text-muted-foreground">SSL Criptografado</p>
-                <p className="text-sm text-muted-foreground">Acesso Imediato</p>
+            <div className="mt-6 flex justify-center items-center gap-4 md:justify-start text-muted-foreground">
+                <div className="flex items-center gap-2">
+                    <ShieldCheck className="h-5 w-5 text-primary"/>
+                    <p className="text-sm">Compra Segura</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <PiCreditCard size={20} className="text-primary"/>
+                    <p className="text-sm">Cartão</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <PiPixLogo size={20} className="text-primary"/>
+                    <p className="text-sm">PIX</p>
+                </div>
+                 <div className="flex items-center gap-2">
+                    <PiBarcode size={20} className="text-primary"/>
+                    <p className="text-sm">Boleto</p>
+                </div>
             </div>
           </div>
         </div>

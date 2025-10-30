@@ -12,23 +12,23 @@ const faqItems = [
     },
     {
         question: "Funciona mesmo pra quem tem TDAH?",
-        answer: "Sim. O método inclui técnicas de foco e organização que são especialmente úteis para pessoas com TDAH, ajudando a criar uma estrutura, gerenciar a atenção e a usar o hiperfoco a seu favor.",
+        answer: "Sim! As técnicas são baseadas em neurociência e ajudam especialmente quem tem dificuldade de foco.",
     },
     {
         question: "Posso estudar mesmo tendo pouco tempo livre?",
-        answer: "Com certeza! O método foca em otimizar a qualidade do seu estudo, não apenas a quantidade. Você aprenderá a aproveitar ao máximo cada minuto disponível, tornando seu tempo mais produtivo.",
-    },
-    {
-        question: "Recebo o material na hora?",
-        answer: "Sim! Assim que o pagamento for confirmado, você receberá um e-mail com o acesso imediato e vitalício a todo o material.",
+        answer: "Com certeza! O método foca em otimizar a qualidade do seu estudo, não apenas a quantidade. Você aprenderá a aproveitar ao máximo cada minuto disponível.",
     },
     {
         question: "Posso pagar com Pix, cartão ou boleto?",
         answer: "Sim, a plataforma de pagamento aceita as principais formas de pagamento, incluindo Pix, cartão de crédito (parcelado) e boleto bancário.",
     },
     {
+        question: "Recebo o material na hora?",
+        answer: "Sim! Assim que o pagamento for confirmado, você receberá um e-mail com o acesso imediato e vitalício a todo o material.",
+    },
+    {
         question: "Posso acessar pelo celular?",
-        answer: "Sim! Todo o material é responsivo e pode ser acessado de qualquer dispositivo: celular, tablet ou computador, a qualquer hora e em qualquer lugar.",
+        answer: "Sim, todo o conteúdo é 100% online e compatível com qualquer dispositivo.",
     },
 ];
 

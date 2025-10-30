@@ -7,19 +7,19 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Matheus Nunes",
-    text: "Consegui finalmente estudar com consistência. Valeu cada centavo! O método é direto ao ponto e funciona.",
+    name: "Rafael M.",
+    text: "Estava completamente travado nos estudos. Agora consigo estudar 3h por dia sem forçar.",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-matheus"),
   },
   {
-    name: "Otávio Mesquita",
-    text: "Me ajudou muito, estava sem rumo. Agora tenho disciplina e foco para passar no meu concurso. Recomendo demais!",
-    image: PlaceHolderImages.find((img) => img.id === "testimonial-otavio"),
+    name: "Larissa P.",
+    text: "Achei que era só mais um curso, mas mudou meu jeito de ver a rotina. Recomendo demais!",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-julia"),
   },
   {
-    name: "Júlia Almeida",
-    text: "As técnicas são práticas e fáceis de aplicar. Em uma semana minha rotina já era outra! Parece mágica.",
-    image: PlaceHolderImages.find((img) => img.id === "testimonial-julia"),
+    name: "Otávio Mesquita",
+    text: "Me ajudou muito, estava sem rumo. Agora tenho disciplina e foco para passar no meu concurso!",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-otavio"),
   },
 ];
 
@@ -29,7 +29,7 @@ export function Testimonials() {
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center">
           <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Veja o que nossos <span className="text-accent">2.347 alunos</span> dizem
+            Veja o que nossos <span className="text-accent">alunos</span> dizem
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A transformação deles pode ser a sua também.
@@ -60,7 +60,14 @@ export function Testimonials() {
                     <CardTitle className="text-lg font-semibold">{testimonial.name}</CardTitle>
                     <div className="mt-1 flex gap-0.5">
                         {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: i * 0.1 + 0.5 }}
+                        >
+                            <Star className="h-5 w-5 fill-accent text-accent" />
+                        </motion.div>
                         ))}
                     </div>
                     </div>

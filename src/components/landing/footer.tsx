@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-2 md:items-start">
           <Logo className="h-10 w-10" />
           <p className="text-sm text-muted-foreground">
-            © 2025 — Como Ficar Viciado em Estudar. <br /> Todos os direitos reservados.
+            © 2024 — Como Ficar Viciado em Estudar. <br /> Todos os direitos reservados.
           </p>
         </div>
         <div className="flex items-center gap-4 text-sm text-muted-foreground">

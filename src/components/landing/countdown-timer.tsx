@@ -33,17 +33,17 @@ export function CountdownTimer() {
   const formatTime = (time: number) => time.toString().padStart(2, '0');
 
   return (
-    <div className="flex items-center justify-center space-x-2 text-center">
+    <div className="grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-center gap-x-2 text-center">
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.hours)}</span>
             <span className="text-xs text-muted-foreground">HORAS</span>
         </div>
-        <span className="font-headline text-3xl font-bold text-primary">:</span>
+        <span className="font-headline text-3xl font-bold text-primary -translate-y-2">:</span>
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.minutes)}</span>
             <span className="text-xs text-muted-foreground">MINUTOS</span>
         </div>
-        <span className="font-headline text-3xl font-bold text-primary">:</span>
+        <span className="font-headline text-3xl font-bold text-primary -translate-y-2">:</span>
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.seconds)}</span>
             <span className="text-xs text-muted-foreground">SEGUNDOS</span>

@@ -12,7 +12,7 @@ const testimonials = [
     image: PlaceHolderImages.find((img) => img.id === "testimonial-matheus"),
   },
   {
-    name: "Larissa P.",
+    name: "Lucas S.",
     text: "Achei que era só mais um curso, mas mudou meu jeito de ver a rotina. Recomendo demais!",
     image: PlaceHolderImages.find((img) => img.id === "testimonial-julia"),
   },

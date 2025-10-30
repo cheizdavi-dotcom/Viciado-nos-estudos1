@@ -11,9 +11,9 @@ export function Header() {
   return (
     <header className="relative py-20 text-center md:py-32 overflow-hidden">
        <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-background via-background to-black/80"></div>
-        <div className="absolute top-[-20%] left-[-20%] h-[50%] w-[50%] rounded-full bg-primary/15 blur-[150px] opacity-70"></div>
-        <div className="absolute bottom-[-20%] right-[-20%] h-[50%] w-[50%] rounded-full bg-primary/15 blur-[150px] opacity-70"></div>
+        {/* Efeitos de brilho sutis */}
+        <div className="absolute top-[-20%] left-[-20%] h-[50%] w-[50%] rounded-full bg-primary/10 blur-[150px] opacity-60"></div>
+        <div className="absolute bottom-[-20%] right-[-20%] h-[50%] w-[50%] rounded-full bg-primary/10 blur-[150px] opacity-60"></div>
       </div>
       <div className="container z-10 mx-auto max-w-4xl">
         <motion.h1 

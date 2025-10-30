@@ -36,17 +36,17 @@ export function CountdownTimer() {
     <div className="grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-center gap-x-2 text-center">
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.hours)}</span>
-            <span className="text-xs text-muted-foreground">HORAS</span>
+            <span className="text-xs text-foreground/90">HORAS</span>
         </div>
         <span className="font-headline text-3xl font-bold text-primary -translate-y-2">:</span>
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.minutes)}</span>
-            <span className="text-xs text-muted-foreground">MINUTOS</span>
+            <span className="text-xs text-foreground/90">MINUTOS</span>
         </div>
         <span className="font-headline text-3xl font-bold text-primary -translate-y-2">:</span>
         <div className="flex flex-col items-center">
             <span className="font-headline text-3xl font-bold text-primary">{formatTime(timeLeft.seconds)}</span>
-            <span className="text-xs text-muted-foreground">SEGUNDOS</span>
+            <span className="text-xs text-foreground/90">SEGUNDOS</span>
         </div>
     </div>
   );

@@ -57,19 +57,19 @@ export function Offer() {
                   </ul>
               </div>
               <div className="rounded-lg border-2 border-primary/50 bg-background/50 p-6 flex flex-col items-center justify-center">
-                 <p className="text-lg text-foreground/80">Oferta válida até hoje às 23:59</p>
+                 <p className="text-lg text-foreground">Oferta válida até hoje às 23:59</p>
                 
                  <div className="my-4 text-center">
-                    <p className="text-lg text-foreground/80">
-                        De <s className="text-destructive/80">R$39,90</s> por apenas:
+                    <p className="text-lg text-foreground/90">
+                        De <s className="text-destructive">R$39,90</s> por apenas:
                     </p>
                     <p className="font-headline text-6xl font-black text-primary">R$9,99</p>
-                    <p className="text-sm text-foreground/80">(Pagamento único)</p>
+                    <p className="text-sm text-foreground/90">(Pagamento único)</p>
                  </div>
 
                 <div className="flex flex-col items-center gap-2">
                     <CountdownTimer />
-                    <div className="flex items-center gap-2 text-sm text-foreground/80 mt-2">
+                    <div className="flex items-center gap-2 text-sm text-foreground mt-2">
                         <ShieldCheck className="h-5 w-5 text-primary" /> Garantia total de 7 dias.
                     </div>
                 </div>

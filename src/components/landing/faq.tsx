@@ -1,3 +1,4 @@
+'use client';
 import {
   Accordion,
   AccordionContent,
@@ -34,6 +35,14 @@ const faqItems = [
 ];
 
 export function Faq() {
+  const handleScrollToOffer = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const offerSection = document.getElementById("offer");
+    if (offerSection) {
+      offerSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="py-20 sm:py-24">
       <div className="container mx-auto max-w-3xl px-4">
@@ -60,7 +69,7 @@ export function Faq() {
         <div className="mt-16 flex flex-col items-center justify-center text-center">
             <h3 className="font-headline text-2xl font-bold">Pronto para começar sua transformação?</h3>
             <p className="mt-2 text-muted-foreground">Clique no botão abaixo e garanta seu acesso com desconto.</p>
-            <Button size="lg" className="mt-6 h-14 px-8 font-headline text-lg tracking-wide">
+            <Button size="lg" className="mt-6 h-14 px-8 font-headline text-lg tracking-wide" onClick={handleScrollToOffer}>
                 Sim, Quero Garantir Meu Acesso!
             </Button>
         </div>

@@ -9,10 +9,11 @@ const heroImage = PlaceHolderImages.find((img) => img.id === "hero-product-image
 
 export function Header() {
 
-  const handleScrollToOffer = () => {
+  const handleScrollToOffer = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     const offerSection = document.getElementById("offer");
     if (offerSection) {
-      offerSection.scrollIntoView({ behavior: "smooth" });
+      offerSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 

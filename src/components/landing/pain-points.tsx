@@ -38,7 +38,7 @@ export function PainPoints() {
             Se você se identificou, este método é <span className="text-primary">exatamente o que você precisa</span>.
           </p>
           <div className="mt-8 flex justify-center">
-             <Button variant="outline" size="lg" className="h-14 text-base">
+             <Button size="lg" className="h-14 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40">
                 Sim, Preciso Mudar Isso Agora
             </Button>
           </div>

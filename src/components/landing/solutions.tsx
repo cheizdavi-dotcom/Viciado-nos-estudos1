@@ -1,6 +1,6 @@
 'use client';
 
-import { Book, Video, BrainCircuit, Star, Mail, Users } from "lucide-react";
+import { BookOpen, BrainCircuit, Star, Mail, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ const solutions = [
   {
     title: "+1200 Técnicas e Estratégias",
     description: "Um arsenal completo contra a procrastinação para você nunca mais ficar sem saber o que fazer.",
-    icon: Book,
+    icon: BookOpen,
   },
   {
     title: "Dicas Neurocientíficas",

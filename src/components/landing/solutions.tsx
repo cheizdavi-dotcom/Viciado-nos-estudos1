@@ -58,7 +58,7 @@ export function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-start gap-4 rounded-lg border border-primary bg-card p-6 transition-all hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
+                className="flex flex-col items-start gap-4 rounded-lg border border-primary/30 bg-card p-6 transition-all hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
               <solution.icon className="h-10 w-10 text-primary" />
               <h3 className="font-headline text-2xl font-bold">{solution.title}</h3>
               <p className="text-muted-foreground flex-1">{solution.description}</p>

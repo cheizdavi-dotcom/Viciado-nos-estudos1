@@ -14,7 +14,7 @@ export function PainPoints() {
   return (
     <section className="bg-card py-20 sm:py-24">
       <div className="container mx-auto max-w-4xl px-4">
-        <ul className="space-y-8">
+        <ul className="space-y-6">
           {painPoints.map((point, index) => (
              <motion.li 
                 key={index} 
@@ -24,7 +24,7 @@ export function PainPoints() {
                 viewport={{ once: true }}
                 className="flex items-start gap-4 p-4 rounded-lg hover:bg-background/30 transition-colors">
               <AlertTriangle className="mt-1 h-8 w-8 flex-shrink-0 text-accent" />
-              <p className="text-lg text-foreground md:text-xl" dangerouslySetInnerHTML={{ __html: point }}></p>
+              <p className="text-lg text-foreground/90 md:text-xl" dangerouslySetInnerHTML={{ __html: point }}></p>
             </motion.li>
           ))}
         </ul>
@@ -38,7 +38,7 @@ export function PainPoints() {
             Se você se identificou, este método é <span className="text-primary">exatamente o que você precisa</span>.
           </p>
           <div className="mt-8 flex justify-center">
-             <Button size="lg" className="h-14 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40">
+             <Button variant="default" size="lg" className="h-14 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40">
                 Sim, Preciso Mudar Isso Agora
             </Button>
           </div>

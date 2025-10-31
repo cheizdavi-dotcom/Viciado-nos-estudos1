@@ -30,6 +30,7 @@ const solutions = [
     title: "Suporte Direto por E-mail",
     description: "Tire suas dúvidas e receba orientação personalizada sempre que precisar.",
      icon: Mail,
+     featured: true,
   },
    {
     title: "Comunidade Exclusiva",
@@ -43,14 +44,14 @@ export function Solutions() {
     <section className="py-20 sm:py-24">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="font-headline text-4xl font-black tracking-tight sm:text-5xl md:text-6xl">
+          <h2 className="font-headline text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
             O Método Cientificamente Comprovado Que Vai Fazer Você <span className="text-primary">Virar a Chave</span> da Procrastinação
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Baseado em princípios da neurociência e psicologia cognitiva, o método ensina como transformar procrastinação em foco através de hábitos simples e comprovados.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution, index) => (
             <motion.div 
                 key={solution.title}
@@ -58,9 +59,12 @@ export function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-start gap-4 rounded-lg border border-primary/30 bg-card p-6 transition-all hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
+                className={cn(
+                    "flex flex-col items-start gap-4 rounded-lg border bg-card p-6 transition-all hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1",
+                    solution.featured ? "border-primary/50" : "border-primary/20",
+                )}>
               <solution.icon className="h-10 w-10 text-primary" />
-              <h3 className="font-headline text-2xl font-bold">{solution.title}</h3>
+              <h3 className="font-headline text-xl font-bold">{solution.title}</h3>
               <p className="text-muted-foreground flex-1">{solution.description}</p>
             </motion.div>
           ))}

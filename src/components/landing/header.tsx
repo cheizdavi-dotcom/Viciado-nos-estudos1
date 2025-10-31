@@ -18,7 +18,7 @@ export function Header() {
   };
 
   return (
-    <header className="relative py-12 text-center md:py-24 overflow-hidden">
+    <header className="relative py-12 text-center md:py-24 lg:pt-32 lg:pb-24 overflow-hidden">
        <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] left-[-20%] h-[50%] w-[50%] rounded-full bg-primary/10 blur-[150px] opacity-60"></div>
         <div className="absolute bottom-[-20%] right-[-20%] h-[50%] w-[50%] rounded-full bg-primary/10 blur-[150px] opacity-60"></div>

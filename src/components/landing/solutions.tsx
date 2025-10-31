@@ -78,7 +78,7 @@ export function Solutions() {
           ))}
         </div>
         <div className="mt-16 flex justify-center">
-          <Button size="lg" className="h-14 px-8 font-headline text-lg tracking-wide" onClick={handleScrollToOffer}>
+          <Button variant="default" size="lg" className="h-14 px-8 font-headline text-lg tracking-wide" onClick={handleScrollToOffer}>
             Quero Superar a Procrastinação!
           </Button>
         </div>

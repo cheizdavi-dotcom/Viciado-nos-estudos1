@@ -1,11 +1,11 @@
-import { CheckCircle2, Clock, Music4, Zap, ShieldCheck } from "lucide-react";
+import { CheckCircle, Clock, Music4, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CountdownTimer } from './countdown-timer';
 
 const included = [
     {
-        icon: CheckCircle2,
+        icon: CheckCircle,
         text: "Ebook principal",
     },
     {

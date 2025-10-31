@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 const heroImage = PlaceHolderImages.find((img) => img.id === "hero-product-image");
 
 export function Header() {
-
   const handleScrollToOffer = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const offerSection = document.getElementById("offer");
@@ -38,19 +37,6 @@ export function Header() {
           className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
           Método já aplicado em <span className="font-bold text-accent">mais de 2.300 alunos</span> e baseado em neurociência e técnicas comportamentais.
         </motion.p>
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }} 
-            className="mt-10 flex justify-center">
-            <Button 
-              size="lg" 
-              className="h-14 min-w-56 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40"
-              onClick={handleScrollToOffer}
-            >
-              Quero Começar Minha Transformação Agora!
-            </Button>
-        </motion.div>
       </div>
       <motion.div 
         initial={{ opacity: 0, y: 40 }}

@@ -3,6 +3,7 @@
 import { Book, Video, BrainCircuit, Star, Mail, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const solutions = [
   {
@@ -57,7 +58,10 @@ export function Solutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-start gap-4 rounded-lg border border-border/50 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
+                className={cn(
+                    "flex flex-col items-start gap-4 rounded-lg border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1",
+                    solution.title === "Suporte Direto por E-mail" ? "border-primary" : "border-border/50"
+                  )}>
               <solution.icon className="h-10 w-10 text-primary" />
               <h3 className="font-headline text-2xl font-bold">{solution.title}</h3>
               <p className="text-muted-foreground flex-1">{solution.description}</p>

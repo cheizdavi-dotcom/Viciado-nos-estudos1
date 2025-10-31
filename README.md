@@ -1,5 +1,3 @@
-# Firebase Studio
+# Viciado nos Estudos
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+Página de vendas do produto 'Como Ficar Viciado em Estudar'.

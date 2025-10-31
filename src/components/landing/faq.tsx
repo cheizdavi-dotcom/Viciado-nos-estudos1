@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 const faqItems = [
     {
@@ -56,6 +57,13 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="mt-16 flex flex-col items-center justify-center text-center">
+            <h3 className="font-headline text-2xl font-bold">Pronto para começar sua transformação?</h3>
+            <p className="mt-2 text-muted-foreground">Clique no botão abaixo e garanta seu acesso com desconto.</p>
+            <Button size="lg" className="mt-6 h-14 px-8 font-headline text-lg tracking-wide">
+                Sim, Quero Garantir Meu Acesso!
+            </Button>
+        </div>
       </div>
     </section>
   );

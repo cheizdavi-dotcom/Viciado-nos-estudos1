@@ -9,7 +9,7 @@ export function BeforeAfter() {
             <h3 className="font-headline text-3xl font-bold text-center text-red-400 flex items-center justify-center gap-2">
               <X className="h-8 w-8" /> ANTES
             </h3>
-            <ul className="mt-6 space-y-4 text-lg text-muted-foreground">
+            <ul className="mt-6 space-y-4 text-lg text-foreground/90">
               <li className="flex items-start gap-3">
                 <span>Distração, culpa e falta de energia.</span>
               </li>
@@ -25,7 +25,7 @@ export function BeforeAfter() {
             <h3 className="font-headline text-3xl font-bold text-center text-primary flex items-center justify-center gap-2">
               <Check className="h-8 w-8" /> DEPOIS
             </h3>
-            <ul className="mt-6 space-y-4 text-lg text-muted-foreground">
+            <ul className="mt-6 space-y-4 text-lg text-foreground/90">
               <li className="flex items-start gap-3">
                 <span>Clareza, rotina sólida e prazer no estudo.</span>
               </li>

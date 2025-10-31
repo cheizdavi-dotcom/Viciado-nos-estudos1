@@ -2,33 +2,18 @@
 
 import { useState, useEffect } from 'react';
 
-// Define o tempo final com base no armazenamento local para persistir entre recarregamentos
-const getEndTime = () => {
-  if (typeof window !== 'undefined') {
-    const storedEndTime = localStorage.getItem('countdownEndTime');
-    if (storedEndTime) {
-      const endTime = parseInt(storedEndTime, 10);
-      // Se o tempo já expirou, reseta para um novo ciclo
-      if (endTime > Date.now()) {
-        return endTime;
-      }
-    }
-    // Define a duração para 1 hora, 30 minutos e 15 segundos a partir de agora
-    const newEndTime = Date.now() + (1 * 60 * 60 * 1000) + (30 * 60 * 1000) + (15 * 1000);
-    localStorage.setItem('countdownEndTime', newEndTime.toString());
-    return newEndTime;
+const DURATION = (1 * 60 * 60 * 1000) + (30 * 60 * 1000) + (15 * 1000); // 1 hora, 30 minutos, 15 segundos
+
+const calculateTimeLeft = (endTime: number | null) => {
+  if (endTime === null) {
+    return { hours: 0, minutes: 0, seconds: 0, total: 0 };
   }
-  // Fallback para o servidor
-  return Date.now() + (1 * 60 * 60 * 1000) + (30 * 60 * 1000) + (15 * 1000);
-};
-
-
-const calculateTimeLeft = (endTime: number) => {
   const difference = endTime - Date.now();
   let timeLeft = {
     hours: 0,
     minutes: 0,
     seconds: 0,
+    total: 0,
   };
 
   if (difference > 0) {
@@ -36,6 +21,7 @@ const calculateTimeLeft = (endTime: number) => {
       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((difference / 1000 / 60) % 60),
       seconds: Math.floor((difference / 1000) % 60),
+      total: difference,
     };
   }
 
@@ -44,34 +30,52 @@ const calculateTimeLeft = (endTime: number) => {
 
 export function CountdownTimer() {
   const [endTime, setEndTime] = useState<number | null>(null);
-  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const timeLeft = calculateTimeLeft(endTime);
 
   useEffect(() => {
-    // Garante que o código do lado do cliente seja executado apenas no navegador
-    setEndTime(getEndTime());
+    // This function runs only on the client side
+    const getStoredEndTime = () => {
+      const storedEndTime = localStorage.getItem('countdownEndTime');
+      if (storedEndTime) {
+        const parsedEndTime = parseInt(storedEndTime, 10);
+        if (parsedEndTime > Date.now()) {
+          return parsedEndTime;
+        }
+      }
+      // If no valid end time, create a new one
+      const newEndTime = Date.now() + DURATION;
+      localStorage.setItem('countdownEndTime', newEndTime.toString());
+      return newEndTime;
+    };
+    
+    setEndTime(getStoredEndTime());
   }, []);
 
   useEffect(() => {
     if (endTime === null) return;
 
     const timer = setInterval(() => {
-      const newTimeLeft = calculateTimeLeft(endTime);
-      setTimeLeft(newTimeLeft);
-
-      if (newTimeLeft.hours === 0 && newTimeLeft.minutes === 0 && newTimeLeft.seconds === 0) {
-        // Quando o tempo acabar, define um novo tempo final para reiniciar o ciclo
-        const newEndTime = getEndTime();
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('countdownEndTime', newEndTime.toString());
-        }
+      if (Date.now() >= endTime) {
+        const newEndTime = Date.now() + DURATION;
+        localStorage.setItem('countdownEndTime', newEndTime.toString());
         setEndTime(newEndTime);
+      } else {
+        // We just need to trigger a re-render
+        setEndTime(currentEndTime => currentEndTime);
       }
     }, 1000);
 
     return () => clearInterval(timer);
   }, [endTime]);
 
+
   const formatTime = (time: number) => time.toString().padStart(2, '0');
+
+  // Don't render the timer until we have the end time from the client
+  if (endTime === null) {
+    // Render a placeholder or null to avoid hydration mismatch
+    return null;
+  }
 
   return (
     <div className="grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-center gap-x-2 text-center">

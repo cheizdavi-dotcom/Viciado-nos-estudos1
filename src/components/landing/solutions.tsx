@@ -49,7 +49,7 @@ export function Solutions() {
   };
 
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-16 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-headline text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
@@ -59,7 +59,7 @@ export function Solutions() {
             Baseado em princípios da neurociência e psicologia cognitiva, o método ensina como transformar procrastinação em foco através de hábitos simples e comprovados.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution, index) => (
             <motion.div 
                 key={solution.title}
@@ -77,8 +77,8 @@ export function Solutions() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-16 flex justify-center">
-          <Button variant="default" size="lg" className="h-14 px-8 font-headline text-lg tracking-wide" onClick={handleScrollToOffer}>
+        <div className="mt-12 flex justify-center">
+          <Button variant="default" size="lg" className="h-14 px-8 font-headline text-base sm:text-lg tracking-wide" onClick={handleScrollToOffer}>
             Quero Superar a Procrastinação!
           </Button>
         </div>

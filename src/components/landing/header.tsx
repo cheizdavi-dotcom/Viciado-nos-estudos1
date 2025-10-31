@@ -42,7 +42,7 @@ export function Header() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.6 }}
-        className="container mx-auto mt-16 max-w-3xl px-4 md:mt-20">
+        className="container mx-auto mt-10 max-w-3xl px-4 md:mt-16">
         {heroImage && (
             <Image
               src={heroImage.imageUrl}

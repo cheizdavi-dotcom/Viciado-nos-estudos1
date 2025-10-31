@@ -25,17 +25,17 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-16 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center">
-          <h2 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Veja o que nossos <span className="text-accent">alunos</span> dizem
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A transformação deles pode ser a sua também.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
              <motion.div
                 key={testimonial.name}

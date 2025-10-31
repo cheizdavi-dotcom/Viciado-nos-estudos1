@@ -20,7 +20,7 @@ export function PainPoints() {
   };
 
   return (
-    <section className="bg-card py-20 sm:py-24">
+    <section className="bg-card py-16 sm:py-20">
       <div className="container mx-auto max-w-4xl px-4">
         <ul className="space-y-6">
           {painPoints.map((point, index) => (
@@ -32,7 +32,7 @@ export function PainPoints() {
                 viewport={{ once: true }}
                 className="flex items-start gap-4 rounded-lg p-4 transition-colors hover:bg-background/30">
               <AlertTriangle className="mt-1 h-8 w-8 flex-shrink-0 text-accent" />
-              <p className="text-lg text-foreground/90 md:text-xl" dangerouslySetInnerHTML={{ __html: point }}></p>
+              <p className="text-lg text-foreground/90 sm:text-xl" dangerouslySetInnerHTML={{ __html: point }}></p>
             </motion.li>
           ))}
         </ul>
@@ -42,11 +42,11 @@ export function PainPoints() {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <p className="mt-12 text-center font-headline text-xl font-semibold text-foreground md:text-2xl">
+          <p className="mt-10 text-center font-headline text-xl font-semibold text-foreground md:text-2xl">
             Se você se identificou, este método é <span className="text-primary">exatamente o que você precisa</span>.
           </p>
           <div className="mt-8 flex justify-center">
-             <Button variant="default" size="lg" className="h-14 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40" onClick={handleScrollToOffer}>
+             <Button variant="default" size="lg" className="h-14 px-8 font-headline text-base sm:text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40" onClick={handleScrollToOffer}>
                 Sim, Preciso Mudar Isso Agora
             </Button>
           </div>

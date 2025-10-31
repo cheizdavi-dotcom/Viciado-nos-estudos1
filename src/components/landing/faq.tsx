@@ -44,7 +44,7 @@ export function Faq() {
   };
 
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-16 sm:py-20">
       <div className="container mx-auto max-w-3xl px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -66,10 +66,10 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="mt-16 flex flex-col items-center justify-center text-center">
-            <h3 className="font-headline text-2xl font-bold">Pronto para começar sua transformação?</h3>
+        <div className="mt-12 flex flex-col items-center justify-center text-center">
+            <h3 className="font-headline text-xl sm:text-2xl font-bold">Pronto para começar sua transformação?</h3>
             <p className="mt-2 text-muted-foreground">Clique no botão abaixo e garanta seu acesso com desconto.</p>
-            <Button size="lg" className="mt-6 h-14 px-8 font-headline text-lg tracking-wide" onClick={handleScrollToOffer}>
+            <Button size="lg" className="mt-6 h-14 px-8 font-headline text-base sm:text-lg tracking-wide" onClick={handleScrollToOffer}>
                 Sim, Quero Garantir Meu Acesso!
             </Button>
         </div>

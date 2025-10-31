@@ -9,10 +9,6 @@ const included = [
         text: "Ebook principal",
     },
     {
-        icon: CheckCircle2,
-        text: "Vídeos e técnicas práticas",
-    },
-    {
         icon: Music4,
         text: "Playlist de Foco Profundo",
     },

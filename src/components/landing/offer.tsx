@@ -57,9 +57,9 @@ export function Offer() {
                 
                  <div className="my-4 text-center">
                     <p className="text-base sm:text-lg text-foreground/90">
-                        De <s className="text-destructive/90">R$39,90</s> por apenas:
+                        De <s className="text-destructive/90">R$49,90</s> por apenas:
                     </p>
-                    <p className="font-headline text-5xl sm:text-6xl font-black text-primary">R$9,99</p>
+                    <p className="font-headline text-5xl sm:text-6xl font-black text-primary">R$14,90</p>
                     <p className="text-sm text-foreground/90">(Pagamento único)</p>
                  </div>
 

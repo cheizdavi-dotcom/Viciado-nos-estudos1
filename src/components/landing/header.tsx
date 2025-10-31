@@ -4,11 +4,18 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const heroImage = PlaceHolderImages.find((img) => img.id === "hero-product-image");
 
 export function Header() {
+
+  const handleScrollToOffer = () => {
+    const offerSection = document.getElementById("offer");
+    if (offerSection) {
+      offerSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="relative py-12 text-center md:py-24 overflow-hidden">
        <div className="absolute inset-0 z-0">
@@ -35,11 +42,13 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }} 
             className="mt-10 flex justify-center">
-          <Link href="#offer">
-            <Button size="lg" className="h-14 min-w-56 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40">
+            <Button 
+              size="lg" 
+              className="h-14 min-w-56 px-8 font-headline text-lg tracking-wide shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40"
+              onClick={handleScrollToOffer}
+            >
               Quero Começar Minha Transformação Agora!
             </Button>
-          </Link>
         </motion.div>
       </div>
       <motion.div 

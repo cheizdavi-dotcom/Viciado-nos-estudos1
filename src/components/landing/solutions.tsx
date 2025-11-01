@@ -55,7 +55,7 @@ export function Solutions() {
           <h2 className="font-headline text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
             O Método Cientificamente Comprovado Que Vai Fazer Você <span className="text-primary">Virar a Chave</span> da Procrastinação
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground">
             Baseado em princípios da neurociência e psicologia cognitiva, o método ensina como transformar procrastinação em foco através de hábitos simples e comprovados.
           </p>
         </div>

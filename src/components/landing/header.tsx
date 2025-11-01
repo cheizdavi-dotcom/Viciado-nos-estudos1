@@ -27,14 +27,14 @@ export function Header() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-headline text-4xl font-black tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          className="font-headline text-3xl font-black tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
           Pare de Procrastinar e Descubra Como Estudar com <span className="text-primary">Foco, Disciplina e Prazer</span> Todos os Dias.
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+          className="mx-auto mt-6 max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground">
           Método já aplicado em <span className="font-bold text-accent">mais de 2.300 alunos</span> e baseado em neurociência e técnicas comportamentais.
         </motion.p>
       </div>

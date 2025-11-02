@@ -26,7 +26,7 @@ const included = [
 
 export function Offer() {
 
-  const checkoutUrl = "https://pay.kirvano.com/979606d6-f38b-4933-956f-2354a85f8386";
+  const checkoutUrl = "https://checkout.viciadonosestudos.site/VCCL1O8SCFH0";
 
   return (
     <section id="offer" className="bg-card py-16 sm:py-20">

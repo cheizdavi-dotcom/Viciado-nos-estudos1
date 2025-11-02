@@ -1,7 +1,9 @@
+'use client';
 import { CheckCircle, Clock, Music4, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { CountdownTimer } from './countdown-timer';
+import Link from "next/link";
 
 const included = [
     {
@@ -23,6 +25,9 @@ const included = [
 ]
 
 export function Offer() {
+
+  const checkoutUrl = "https://pay.kirvano.com/979606d6-f38b-4933-956f-2354a85f8386";
+
   return (
     <section id="offer" className="bg-card py-16 sm:py-20">
       <div className="container mx-auto max-w-4xl px-4">
@@ -72,9 +77,11 @@ export function Offer() {
               </div>
             </div>
             
-            <Button size="lg" className="mt-8 h-16 w-full max-w-lg px-6 sm:px-8 font-headline text-base sm:text-xl tracking-wide animate-pulse">
-              Garantir Acesso com Desconto!
-            </Button>
+            <Link href={checkoutUrl} target="_blank" className="mt-8 w-full max-w-lg">
+              <Button size="lg" className="h-16 w-full px-6 sm:px-8 font-headline text-base sm:text-xl tracking-wide animate-pulse">
+                Garantir Acesso com Desconto!
+              </Button>
+            </Link>
           </CardContent>
         </Card>
       </div>

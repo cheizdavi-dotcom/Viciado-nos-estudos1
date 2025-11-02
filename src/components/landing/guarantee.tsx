@@ -1,5 +1,6 @@
+'use client';
 import { ShieldCheck } from "lucide-react";
-import { PiCreditCard, PiPixLogo, PiBarcode } from "react-icons/pi";
+import { PiPixLogo, PiBarcode } from "react-icons/pi";
 
 
 export function Guarantee() {

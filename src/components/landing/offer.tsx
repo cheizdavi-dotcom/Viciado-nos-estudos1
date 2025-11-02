@@ -26,7 +26,7 @@ const included = [
 
 export function Offer() {
 
-  const checkoutUrl = "https://checkout.viciadonosestudos.site";
+  const checkoutUrl = "https://pay.vegacheckout.com.br/hCjQOmlk9g7j";
 
   return (
     <section id="offer" className="bg-card py-16 sm:py-20">

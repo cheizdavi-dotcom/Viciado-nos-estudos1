@@ -23,10 +23,6 @@ export function Guarantee() {
                     <p className="text-sm">Compra Segura</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <PiCreditCard size={20} className="text-primary"/>
-                    <p className="text-sm">Cartão</p>
-                </div>
-                <div className="flex items-center gap-2">
                     <PiPixLogo size={20} className="text-primary"/>
                     <p className="text-sm">PIX</p>
                 </div>

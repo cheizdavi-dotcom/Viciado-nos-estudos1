@@ -26,7 +26,7 @@ const included = [
 
 export function Offer() {
 
-  const checkoutUrl = "https://checkout.viciadonosestudos.site/VCCL1O8SCFH0";
+  const checkoutUrl = "https://checkout.viciadonosestudos.site";
 
   return (
     <section id="offer" className="bg-card py-16 sm:py-20">

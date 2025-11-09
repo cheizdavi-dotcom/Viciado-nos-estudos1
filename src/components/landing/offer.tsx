@@ -164,16 +164,16 @@ export function Offer() {
     </section>
 
     <Dialog open={isUpsellModalOpen} onOpenChange={setIsUpsellModalOpen}>
-      <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center">
+      <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="font-headline text-4xl sm:text-5xl font-black text-center mx-auto flex items-center gap-2">
+          <DialogTitle className="font-headline text-3xl sm:text-4xl font-black text-center mx-auto flex items-center gap-2">
             😮 Espere!
           </DialogTitle>
-          <DialogDescription className="text-lg text-muted-foreground pt-2">
+          <DialogDescription className="text-base sm:text-lg text-muted-foreground pt-2">
             Por apenas <span className="font-bold text-accent">R$ 4,90 a mais</span>, você pode levar o Pacote Completo com todos os bônus e acesso vitalício!
           </DialogDescription>
         </DialogHeader>
-        <div className="my-6 space-y-3 text-left w-fit mx-auto">
+        <div className="my-4 sm:my-6 space-y-3 text-left w-fit mx-auto text-sm sm:text-base">
             <div className="flex items-center gap-3 text-foreground">
                 <Music4 className="h-6 w-6 text-primary" />
                 <span>Playlist de Foco Profundo</span>
@@ -187,11 +187,11 @@ export function Offer() {
                 <span>Resultados mais rápidos e duradouros</span>
             </div>
         </div>
-        <DialogFooter className="flex-col gap-2">
+        <DialogFooter className="flex-col gap-2 sm:gap-3">
           <Link href={checkoutUrlCompleto} target="_blank" className="w-full">
-            <Button type="button" size="lg" className="h-14 w-full font-headline text-lg animate-pulse" onClick={() => setIsUpsellModalOpen(false)}>
+            <Button type="button" size="lg" className="h-auto py-3 w-full font-headline text-base sm:text-lg animate-pulse whitespace-normal" onClick={() => setIsUpsellModalOpen(false)}>
               Sim, Atualizar para o Pacote Completo!
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 hidden sm:inline" />
             </Button>
           </Link>
           <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '_self' : '_blank'} legacyBehavior passHref>

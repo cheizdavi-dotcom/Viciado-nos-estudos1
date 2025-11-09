@@ -44,24 +44,13 @@ const completeFeatures = [
 export function Offer() {
   const [isUpsellModalOpen, setIsUpsellModalOpen] = useState(false);
 
-  const checkoutUrlCompleto = "https://checkout.viciadonosestudos.site/VCCL1O8SCFH0";
+  const checkoutUrlCompleto = "https://pay.wiapy.com/xSGxp3qOxQ";
   const checkoutUrlBasico = "#";
 
   const handleBasicButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsUpsellModalOpen(true);
   }
-
-  const handleDeclineUpsell = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (checkoutUrlBasico === '#') {
-        e.preventDefault();
-        alert('Por favor, configure o link de checkout para o Pacote Básico.');
-    } else {
-        // Deixa o Link do Next.js cuidar da navegação
-        setIsUpsellModalOpen(false);
-    }
-  }
-
 
   return (
     <>
@@ -165,15 +154,15 @@ export function Offer() {
 
     <Dialog open={isUpsellModalOpen} onOpenChange={setIsUpsellModalOpen}>
       <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center p-4 sm:p-6">
-        <DialogHeader>
-          <DialogTitle className="font-headline text-3xl sm:text-4xl font-black text-center mx-auto flex items-center gap-2">
+        <DialogHeader className="px-2">
+          <DialogTitle className="font-headline text-2xl sm:text-3xl font-black text-center mx-auto flex items-center gap-2">
             😮 Espere!
           </DialogTitle>
           <DialogDescription className="text-base sm:text-lg text-muted-foreground pt-2">
-            Por apenas <span className="font-bold text-accent">R$ 4,90 a mais</span>, você pode levar o Pacote Completo com todos os bônus e acesso vitalício!
+            Por apenas <span className="font-bold text-accent">R$ 5,00 a mais</span>, você pode levar o Pacote Completo com todos os bônus e acesso vitalício!
           </DialogDescription>
         </DialogHeader>
-        <div className="my-4 sm:my-6 space-y-3 text-left w-fit mx-auto text-sm sm:text-base">
+        <div className="my-4 sm:my-6 space-y-3 text-left w-fit mx-auto text-sm sm:text-base px-2">
             <div className="flex items-center gap-3 text-foreground">
                 <Music4 className="h-6 w-6 text-primary" />
                 <span>Playlist de Foco Profundo</span>
@@ -187,25 +176,35 @@ export function Offer() {
                 <span>Resultados mais rápidos e duradouros</span>
             </div>
         </div>
-        <DialogFooter className="flex-col gap-2 sm:gap-3">
+        <DialogFooter className="flex-col gap-2 sm:gap-3 px-2">
           <Link href={checkoutUrlCompleto} target="_blank" className="w-full">
             <Button type="button" size="lg" className="h-auto py-3 w-full font-headline text-base sm:text-lg animate-pulse whitespace-normal" onClick={() => setIsUpsellModalOpen(false)}>
               Sim, Atualizar para o Pacote Completo!
               <ArrowRight className="ml-2 h-5 w-5 hidden sm:inline" />
             </Button>
           </Link>
-          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '_self' : '_blank'} legacyBehavior passHref>
-            <Button asChild type="button" variant="ghost" size="lg" className="w-full text-muted-foreground hover:bg-transparent hover:text-muted-foreground/80">
-                <a onClick={(e) => {
+           <Button 
+              asChild 
+              type="button" 
+              variant="ghost" 
+              size="lg" 
+              className="w-full text-muted-foreground hover:bg-transparent hover:text-muted-foreground/80 h-auto"
+            >
+              <a 
+                href={checkoutUrlBasico === '#' ? undefined : checkoutUrlBasico}
+                target={checkoutUrlBasico === '#' ? '_self' : '_blank'}
+                onClick={(e) => {
                   if (checkoutUrlBasico === '#') {
                     e.preventDefault();
                     alert('Por favor, configure o link de checkout para o Pacote Básico.');
                   } else {
                     setIsUpsellModalOpen(false);
                   }
-                }}>Não, obrigado, quero apenas o pacote básico.</a>
-            </Button>
-          </Link>
+                }}
+              >
+                Não, obrigado, quero apenas o pacote básico.
+              </a>
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

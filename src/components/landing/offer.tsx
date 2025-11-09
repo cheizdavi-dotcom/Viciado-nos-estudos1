@@ -49,14 +49,20 @@ export function Offer() {
   const checkoutUrlBasico = "#";
 
   const handleBasicButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (checkoutUrlBasico === '#') {
-        e.preventDefault();
-        alert('Por favor, configure o link de checkout para o Pacote Básico.');
-        return;
-    }
     e.preventDefault();
     setIsUpsellModalOpen(true);
   }
+
+  const handleDeclineUpsell = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (checkoutUrlBasico === '#') {
+        e.preventDefault();
+        alert('Por favor, configure o link de checkout para o Pacote Básico.');
+    } else {
+        // Deixa o Link do Next.js cuidar da navegação
+        setIsUpsellModalOpen(false);
+    }
+  }
+
 
   return (
     <>
@@ -184,14 +190,20 @@ export function Offer() {
         </div>
         <DialogFooter className="flex-col gap-2">
           <Link href={checkoutUrlCompleto} target="_blank" className="w-full">
-            <Button type="button" size="lg" className="h-14 w-full font-headline text-lg animate-pulse">
+            <Button type="button" size="lg" className="h-14 w-full font-headline text-lg animate-pulse" onClick={() => setIsUpsellModalOpen(false)}>
               Sim, Atualizar para o Pacote Completo!
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '' : '_blank'} className="w-full">
-            <Button type="button" variant="ghost" size="lg" className="w-full text-muted-foreground" onClick={() => setIsUpsellModalOpen(false)}>
-              Não, obrigado, quero apenas o pacote básico.
+          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '' : '_blank'} className="w-full" legacyBehavior passHref>
+            <Button asChild type="button" variant="ghost" size="lg" className="w-full text-muted-foreground">
+                <a onClick={() => {
+                  if (checkoutUrlBasico === '#') {
+                    alert('Por favor, configure o link de checkout para o Pacote Básico.');
+                  } else {
+                    setIsUpsellModalOpen(false);
+                  }
+                }}>Não, obrigado, quero apenas o pacote básico.</a>
             </Button>
           </Link>
         </DialogFooter>

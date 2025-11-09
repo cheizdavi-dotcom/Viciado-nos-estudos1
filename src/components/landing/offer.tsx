@@ -45,7 +45,7 @@ export function Offer() {
   const [isUpsellModalOpen, setIsUpsellModalOpen] = useState(false);
 
   const checkoutUrlCompleto = "https://pay.wiapy.com/xSGxp3qOxQ";
-  const checkoutUrlBasico = "#";
+  const checkoutUrlBasico = "https://pay.wiapy.com/cbj4qBRi9Z";
 
   const handleBasicButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -155,7 +155,7 @@ export function Offer() {
     <Dialog open={isUpsellModalOpen} onOpenChange={setIsUpsellModalOpen}>
       <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center p-4 sm:p-6">
         <DialogHeader className="px-2">
-          <DialogTitle className="font-headline text-2xl sm:text-3xl font-black text-center mx-auto flex items-center gap-2">
+          <DialogTitle className="font-headline text-xl sm:text-2xl font-black text-center mx-auto flex items-center gap-2">
             😮 Espere!
           </DialogTitle>
           <DialogDescription className="text-base sm:text-lg text-muted-foreground pt-2">
@@ -183,27 +183,10 @@ export function Offer() {
               <ArrowRight className="ml-2 h-5 w-5 hidden sm:inline" />
             </Button>
           </Link>
-           <Button 
-              asChild 
-              type="button" 
-              variant="ghost" 
-              size="lg" 
-              className="w-full text-muted-foreground hover:bg-transparent hover:text-muted-foreground/80 h-auto"
-            >
-              <a 
-                href={checkoutUrlBasico === '#' ? undefined : checkoutUrlBasico}
-                target={checkoutUrlBasico === '#' ? '_self' : '_blank'}
-                onClick={(e) => {
-                  if (checkoutUrlBasico === '#') {
-                    e.preventDefault();
-                    alert('Por favor, configure o link de checkout para o Pacote Básico.');
-                  } else {
-                    setIsUpsellModalOpen(false);
-                  }
-                }}
-              >
-                Não, obrigado, quero apenas o pacote básico.
-              </a>
+          <Button asChild type="button" variant="ghost" size="sm" className="w-full text-muted-foreground hover:text-muted-foreground/80 h-auto" onClick={() => setIsUpsellModalOpen(false)}>
+            <Link href={checkoutUrlBasico} target="_blank">
+              Não, obrigado, quero apenas o pacote básico.
+            </Link>
           </Button>
         </DialogFooter>
       </DialogContent>

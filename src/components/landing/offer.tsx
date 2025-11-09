@@ -45,7 +45,6 @@ export function Offer() {
   const [isUpsellModalOpen, setIsUpsellModalOpen] = useState(false);
 
   const checkoutUrlCompleto = "https://checkout.viciadonosestudos.site/VCCL1O8SCFH0";
-  // IMPORTANTE: Crie um novo produto na Vega para o pacote básico e substitua este link.
   const checkoutUrlBasico = "#";
 
   const handleBasicButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -167,7 +166,7 @@ export function Offer() {
     <Dialog open={isUpsellModalOpen} onOpenChange={setIsUpsellModalOpen}>
       <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center">
         <DialogHeader>
-          <DialogTitle className="font-headline text-4xl sm:text-5xl font-black text-center mx-auto">
+          <DialogTitle className="font-headline text-4xl sm:text-5xl font-black text-center mx-auto flex items-center gap-2">
             😮 Espere!
           </DialogTitle>
           <DialogDescription className="text-lg text-muted-foreground pt-2">
@@ -195,10 +194,11 @@ export function Offer() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '' : '_blank'} className="w-full" legacyBehavior passHref>
-            <Button asChild type="button" variant="ghost" size="lg" className="w-full text-muted-foreground">
-                <a onClick={() => {
+          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '_self' : '_blank'} legacyBehavior passHref>
+            <Button asChild type="button" variant="ghost" size="lg" className="w-full text-muted-foreground hover:bg-transparent hover:text-muted-foreground/80">
+                <a onClick={(e) => {
                   if (checkoutUrlBasico === '#') {
+                    e.preventDefault();
                     alert('Por favor, configure o link de checkout para o Pacote Básico.');
                   } else {
                     setIsUpsellModalOpen(false);

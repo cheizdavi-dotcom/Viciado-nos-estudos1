@@ -1,10 +1,12 @@
 'use client';
-import { CheckCircle, Clock, Music4, Zap, ShieldCheck, XCircle } from "lucide-react";
+import { CheckCircle, Clock, Music4, Zap, ShieldCheck, XCircle, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { CountdownTimer } from './countdown-timer';
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 
 const basicFeatures = [
@@ -40,12 +42,24 @@ const completeFeatures = [
 ]
 
 export function Offer() {
+  const [isUpsellModalOpen, setIsUpsellModalOpen] = useState(false);
 
   const checkoutUrlCompleto = "https://checkout.viciadonosestudos.site/VCCL1O8SCFH0";
   // IMPORTANTE: Crie um novo produto na Vega para o pacote básico e substitua este link.
   const checkoutUrlBasico = "#";
 
+  const handleBasicButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (checkoutUrlBasico === '#') {
+        e.preventDefault();
+        alert('Por favor, configure o link de checkout para o Pacote Básico.');
+        return;
+    }
+    e.preventDefault();
+    setIsUpsellModalOpen(true);
+  }
+
   return (
+    <>
     <section id="offer" className="bg-card py-16 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto">
@@ -91,11 +105,9 @@ export function Offer() {
                         ))}
                     </ul>
                   </div>
-                  <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '' : '_blank'} className="mt-8 w-full">
-                    <Button size="lg" variant="outline" className="h-14 w-full text-base sm:text-lg">
+                    <Button onClick={handleBasicButtonClick} size="lg" variant="outline" className="mt-8 h-14 w-full text-base sm:text-lg">
                         Comprar Pacote Básico
                     </Button>
-                  </Link>
               </CardContent>
           </Card>
 
@@ -126,7 +138,7 @@ export function Offer() {
                             <item.icon className="h-6 w-6 flex-shrink-0 text-primary" />
                             <span>{item.text}</span>
                             </li>
-                        ))}
+))}
                     </ul>
                   </div>
                   <div className="flex flex-col items-center gap-2 mt-8">
@@ -145,5 +157,46 @@ export function Offer() {
         </div>
       </div>
     </section>
+
+    <Dialog open={isUpsellModalOpen} onOpenChange={setIsUpsellModalOpen}>
+      <DialogContent className="sm:max-w-md bg-card border-primary/50 text-center">
+        <DialogHeader>
+          <DialogTitle className="font-headline text-4xl sm:text-5xl font-black text-center mx-auto">
+            😮 Espere!
+          </DialogTitle>
+          <DialogDescription className="text-lg text-muted-foreground pt-2">
+            Por apenas <span className="font-bold text-accent">R$ 4,90 a mais</span>, você pode levar o Pacote Completo com todos os bônus e acesso vitalício!
+          </DialogDescription>
+        </DialogHeader>
+        <div className="my-6 space-y-3 text-left w-fit mx-auto">
+            <div className="flex items-center gap-3 text-foreground">
+                <Music4 className="h-6 w-6 text-primary" />
+                <span>Playlist de Foco Profundo</span>
+            </div>
+             <div className="flex items-center gap-3 text-foreground">
+                <Zap className="h-6 w-6 text-primary" />
+                <span>Acesso vitalício e atualizações</span>
+            </div>
+             <div className="flex items-center gap-3 text-foreground">
+                <Star className="h-6 w-6 text-primary" />
+                <span>Resultados mais rápidos e duradouros</span>
+            </div>
+        </div>
+        <DialogFooter className="flex-col gap-2">
+          <Link href={checkoutUrlCompleto} target="_blank" className="w-full">
+            <Button type="button" size="lg" className="h-14 w-full font-headline text-lg animate-pulse">
+              Sim, Atualizar para o Pacote Completo!
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href={checkoutUrlBasico} target={checkoutUrlBasico === '#' ? '' : '_blank'} className="w-full">
+            <Button type="button" variant="ghost" size="lg" className="w-full text-muted-foreground" onClick={() => setIsUpsellModalOpen(false)}>
+              Não, obrigado, quero apenas o pacote básico.
+            </Button>
+          </Link>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }

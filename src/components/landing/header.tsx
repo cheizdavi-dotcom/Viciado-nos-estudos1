@@ -60,23 +60,30 @@ export function Header() {
       </motion.div>
 
       {/* Seção da VSL (Wistia) */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="container mx-auto mt-12 max-w-4xl px-4 md:mt-16"
-      >
-        <div className="aspect-video w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl shadow-primary/20">
-          <iframe
-            className="h-full w-full"
-            src="https://fast.wistia.net/embed/iframe/gcwoapc9oy"
-            title="Video Sales Letter"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </motion.div>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="container mx-auto mt-12 max-w-4xl px-4 md:mt-16"
+        >
+            <div className="aspect-video w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl shadow-primary/20">
+                <div className="wistia_responsive_padding" style={{padding: "56.25% 0 0 0", position: "relative"}}>
+                    <div className="wistia_responsive_wrapper" style={{height: "100%", left: 0, position: "absolute", top: 0, width: "100%"}}>
+                        <iframe
+                            src="https://fast.wistia.net/embed/iframe/kx7w0r8aft?seo=false&videoFoam=true"
+                            title="VSL Video"
+                            allow="autoplay; fullscreen"
+                            frameBorder="0"
+                            scrolling="no"
+                            className="wistia_embed"
+                            name="wistia_embed"
+                            width="100%"
+                            height="100%"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
     </header>
   );
 }

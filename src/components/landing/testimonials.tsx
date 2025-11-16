@@ -6,11 +6,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
 
 const testimonials = [
-  // {
-  //   name: "Rafael M.",
-  //   text: "Estava completamente travado nos estudos. Agora consigo estudar 3h por dia sem forçar.",
-  //   image: PlaceHolderImages.find((img) => img.id === "testimonial-matheus"),
-  // },
+  {
+    name: "Mariana P.",
+    text: "Estava completamente travada nos estudos. Agora consigo estudar 3h por dia sem forçar.",
+    image: PlaceHolderImages.find((img) => img.id === "testimonial-mariana"),
+  },
   {
     name: "Lucas S.",
     text: "Achei que era só mais um curso, mas mudou meu jeito de ver a rotina. Recomendo demais!",

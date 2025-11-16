@@ -7,12 +7,6 @@
       "imageHint": "product mockup book"
     },
     {
-      "id": "testimonial-matheus",
-      "description": "Retrato de um homem com óculos, em estilo selfie, com fundo natural.",
-      "imageUrl": "https://i.imgur.com/7bQvmC4.jpeg",
-      "imageHint": "man selfie glasses"
-    },
-    {
       "id": "testimonial-otavio",
       "description": "Retrato de um homem com fundo de estante de livros.",
       "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
@@ -23,6 +17,12 @@
       "description": "Retrato de um homem em um ambiente urbano.",
       "imageUrl": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-mariana",
+      "description": "Retrato de uma mulher sorrindo em um ambiente de escritório.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "imageHint": "woman smiling portrait"
     }
   ]
 }

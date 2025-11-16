@@ -69,7 +69,7 @@ export function Header() {
         <div className="aspect-video w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl shadow-primary/20">
           <iframe
             className="h-full w-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // <-- VOU SUBSTITUIR ESTE LINK PELO SEU
+            src="https://www.youtube.com/embed/wiqHNez0u3E?autoplay=1&mute=1&controls=1"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

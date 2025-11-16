@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
+import Script from "next/script";
 
 const heroImage = PlaceHolderImages.find((img) => img.id === "hero-product-image");
 
@@ -59,7 +60,6 @@ export function Header() {
         )}
       </motion.div>
 
-      {/* Seção da VSL (Wistia) */}
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,8 +70,8 @@ export function Header() {
                 <div className="wistia_responsive_padding" style={{padding: "56.25% 0 0 0", position: "relative"}}>
                     <div className="wistia_responsive_wrapper" style={{height: "100%", left: 0, position: "absolute", top: 0, width: "100%"}}>
                         <iframe
-                            src="https://fast.wistia.net/embed/iframe/kx7w0r8aft?seo=false&videoFoam=true"
-                            title="VSL Video"
+                            src="https://fast.wistia.net/embed/iframe/kx7w0r8aft?web_component=true&seo=true"
+                            title="1116 Video"
                             allow="autoplay; fullscreen"
                             frameBorder="0"
                             scrolling="no"
@@ -82,6 +82,7 @@ export function Header() {
                         ></iframe>
                     </div>
                 </div>
+                <Script src="https://fast.wistia.net/player.js" async></Script>
             </div>
         </motion.div>
     </header>

@@ -9,13 +9,13 @@
     {
       "id": "testimonial-matheus",
       "description": "Retrato de um homem com óculos, em estilo selfie, com fundo natural.",
-      "imageUrl": "https://i.imgur.com/NkzFz4H.jpeg",
+      "imageUrl": "https://i.imgur.com/7bQvmC4.jpeg",
       "imageHint": "man selfie glasses"
     },
     {
       "id": "testimonial-otavio",
       "description": "Retrato de um homem com fundo de estante de livros.",
-      "imageUrl": "https://i.imgur.com/NkzFz4H.jpeg",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       "imageHint": "person portrait"
     },
     {

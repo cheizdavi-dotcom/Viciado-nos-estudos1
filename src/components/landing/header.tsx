@@ -58,6 +58,25 @@ export function Header() {
             />
         )}
       </motion.div>
+
+      {/* Seção da VSL (YouTube) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="container mx-auto mt-12 max-w-4xl px-4 md:mt-16"
+      >
+        <div className="aspect-video w-full overflow-hidden rounded-lg border-2 border-primary/30 shadow-2xl shadow-primary/20">
+          <iframe
+            className="h-full w-full"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // <-- VOU SUBSTITUIR ESTE LINK PELO SEU
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </motion.div>
     </header>
   );
 }
